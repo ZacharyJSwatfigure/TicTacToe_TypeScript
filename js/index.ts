@@ -1,9 +1,11 @@
 let turn: boolean = false;
-const currentTurn = document.getElementsByClassName("currentTurn");
+
+// 0 === false === comp turn
+// 1 === true === player turn
 
 const whoStarts = () => {
   const randomNum: number = Math.floor(Math.random() * 2);
-  if (randomNum === 1) {
+  if (randomNum === 0) {
     console.log(randomNum)
     return turn = false;
   } else {
@@ -13,11 +15,26 @@ const whoStarts = () => {
 }
 
 const changeTurnBox = () => {
-  console.log(currentTurn.style)
+
+
+  let currentTurn = document.getElementById('currentTurn');
+
+
+  console.log(turn + '   turn boolean')
+
+
+  console.log(currentTurn)
+
+
   if (currentTurn != null) {
     console.log(' current turn has value')
     if (turn === false) {
-    currentTurn.style.setProperty('text', 'Comp Turn')
+      console.log(currentTurn.style)
+      currentTurn.style.backgroundColor = "red";
+      return currentTurn;
+    } else {
+      currentTurn.style.backgroundColor = "green";
+      return currentTurn;
     }
   }
 }
