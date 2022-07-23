@@ -1,5 +1,12 @@
 let turn: boolean = false;
 
+
+let currentTurn = {};
+
+window.onload = (currentTurn) => {
+  return currentTurn = document.getElementById('currentTurn');
+}
+
 // 0 === false === comp turn
 // 1 === true === player turn
 
@@ -16,10 +23,6 @@ const whoStarts = () => {
 
 const changeTurnBox = () => {
 
-
-  let currentTurn = document.getElementById('currentTurn');
-
-
   console.log(turn + '   turn boolean')
 
 
@@ -30,7 +33,7 @@ const changeTurnBox = () => {
     console.log(' current turn has value')
     if (turn === false) {
       console.log(currentTurn.style)
-      currentTurn.style.backgroundColor = "red";
+      currentTurn.style.innerHTML = "computer turn";
       return currentTurn;
     } else {
       currentTurn.style.backgroundColor = "green";
