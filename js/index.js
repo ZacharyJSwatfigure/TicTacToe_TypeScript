@@ -1,5 +1,6 @@
 var turn = false;
 var currentTurn = document.getElementById('currentTurn');
+var turnCounter = 0;
 var topL = document.getElementById('topL');
 var topM = document.getElementById('topM');
 var topR = document.getElementById('topR');
@@ -20,7 +21,9 @@ var whoStarts = function () {
     }
     else {
         console.log(randomNum);
-        return turn = true;
+        turn = true;
+        computerTurn();
+        return;
     }
 };
 var changeTurnBox = function () {
@@ -35,9 +38,51 @@ var changeTurnBox = function () {
         }
     }
 };
+var computerTurnOne = function () {
+    if (turn) {
+        console.log("turns error 49");
+    }
+    else {
+        if (turnCounter === 0) {
+            var randomNum = Math.floor(Math.random() * 4);
+            switch (randomNum) {
+                case 1:
+                    topL.style.backgroundColor = "red";
+                    turnCounter = turnCounter + 1;
+                    turn = false;
+                    break;
+                case 2:
+                    topR.style.backgroundColor = "red";
+                    turnCounter = turnCounter + 1;
+                    turn = false;
+                    break;
+                case 3:
+                    bottomL.style.backgroundColor = "red";
+                    turnCounter = turnCounter + 1;
+                    turn = false;
+                    break;
+                case 4:
+                    bottomR.style.backgroundColor = "red";
+                    turnCounter = turnCounter + 1;
+                    turn = false;
+                    break;
+            }
+        }
+    }
+};
+var computerTurn = function () {
+    if (turnCounter === 0) {
+        computerTurnOne();
+    }
+    if (turnCounter >= 1) {
+    }
+};
 var boxClicked = function (boxPos) {
     if (turn) {
-        boxPos.style.backGroundColor = "yellow";
+        boxPos.style.backgroundColor = "green";
+        turnCounter += 1;
+        turn = false;
+        return computerTurn();
     }
     else if (!turn) {
         return console.log("not your turn, Goober");
