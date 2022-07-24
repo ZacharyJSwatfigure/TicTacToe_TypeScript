@@ -1,11 +1,22 @@
 let turn: boolean = false;
 
 
-let currentTurn = {};
+let currentTurn = document.getElementById('currentTurn');
 
-window.onload = (currentTurn) => {
-  return currentTurn = document.getElementById('currentTurn');
-}
+
+let topL = document.getElementById('topL');
+let topM = document.getElementById('topM');
+let topR = document.getElementById('topR');
+
+let middleL = document.getElementById('middleL');
+let middleM = document.getElementById('middleM');
+let middleR = document.getElementById('middleR');
+
+let bottomL = document.getElementById('bottomL');
+let bottomM = document.getElementById('bottomM');
+let bottomR = document.getElementById('bottomR');
+
+let xo = document.getElementsByClassName('xo');
 
 // 0 === false === comp turn
 // 1 === true === player turn
@@ -22,18 +33,9 @@ const whoStarts = () => {
 }
 
 const changeTurnBox = () => {
-
-  console.log(turn + '   turn boolean')
-
-
-  console.log(currentTurn)
-
-
   if (currentTurn != null) {
-    console.log(' current turn has value')
     if (turn === false) {
-      console.log(currentTurn.style)
-      currentTurn.style.innerHTML = "computer turn";
+      currentTurn.style.backgroundColor = "red";
       return currentTurn;
     } else {
       currentTurn.style.backgroundColor = "green";
@@ -41,8 +43,17 @@ const changeTurnBox = () => {
     }
   }
 }
+
   
+const boxClicked = (boxPos) => {
   
+  if (turn) {
+    boxPos.style.backGroundColor = "yellow"
+  } else if (!turn) {
+    return console.log("not your turn, Goober")
+  }
+  
+}
 
 const runGame = () => {
   whoStarts();

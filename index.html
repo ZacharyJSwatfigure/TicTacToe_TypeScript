@@ -6,31 +6,31 @@
   <title>Ti-Tac-Toe</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel='stylesheet' type='text/css' media='screen' href='./style/index.css'>
-  <script src='./js/index.js'></script>
 </head>
 <body>
   <h1>Ti-Tac-Toe</h1>
   <p>Man vs Machine</p>
   <p id="currentTurn">test</p>
   <section>
-
-    <div class="container">
-      <div id = "topL" class="boxes"></div>
-      <div id = "topM"  class="boxes"></div>
-      <div id = "topR"  class="boxes"></div>
     
+    <div class="container">
+      <div onClick = 'boxClicked(topL)' id = "topL" class="boxes"></div>
+      <div onClick = 'boxClicked(topM)' id = "topM"  class="boxes"></div>
+      <div onClick = 'boxClicked(topR)' id = "topR"  class="boxes"></div>
+      
     </div>
     <div class="container">
-      <div id = "middleL"  class="boxes"></div>
-      <div id = "middleM"class="boxes"></div>
-      <div id = "middleR" class="boxes"></div>
+      <div onClick = 'boxClicked(middleL)' id = "middleL"  class="boxes"></div>
+      <div onClick = 'boxClicked(middleM)' id = "middleM"class="boxes"></div>
+      <div onClick = 'boxClicked(middleR)' id = "middleR" class="boxes"></div>
     </div>
     <div class="container">
-      <div id = "bottomL" class="boxes"></div>
-      <div id = "bottomM" class="boxes"></div>
-      <div id = "bottomR" class="boxes"></div>
+      <div onClick = 'boxClicked(bottomM)' id = "bottomM" class="boxes"></div>
+      <div onClick = 'boxClicked(bottomR)' id = "bottomR" class="boxes"></div>
+      <div onClick = 'boxClicked(bottomL)' id = "bottomL" class="boxes"></div>
     </div>
     
+    <script src='./js/index.js'></script>
   </section>
 </body>
 </html>
