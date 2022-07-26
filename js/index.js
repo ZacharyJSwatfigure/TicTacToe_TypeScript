@@ -175,21 +175,29 @@ var computerTurn = function () {
                     else {
                         bottomR.style.backgroundColor = "red";
                         bottomRActive = false;
+                        turn = true;
+                        return;
                     }
                 }
                 else {
                     bottomL.style.backgroundColor = "red";
                     bottomRActive = false;
+                    turn = true;
+                    return;
                 }
             }
             else {
                 topR.style.backgroundColor = "red";
                 topLActive = false;
+                turn = true;
+                return;
             }
         }
         else {
             topL.style.backgroundColor = "red";
             topLActive = false;
+            turn = true;
+            return;
         }
     }
 };
